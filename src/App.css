@@ -14,3 +14,19 @@
 .search-button {
 
 }
+
+.data {
+  display: flex;
+  flex-direction: column;
+}
+
+.circle {
+  width: 200px;
+  height: 200px;
+  background-color: #fff;
+  border: 3px solid #00c45b;
+  border-radius: 50%;
+  position: relative;
+  align-self: center;
+  margin: 20px;
+}

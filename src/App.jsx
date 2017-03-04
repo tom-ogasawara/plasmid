@@ -52,8 +52,12 @@ class App extends Component {
         {
           this.state.sequence !== null
           ?
-            <div>
-              {this.state.sequence}
+            <div className="data">
+              <div className="circle">
+              </div>
+              <div className="sequence">
+                {this.state.sequence}
+              </div>
             </div>
           : <div></div>
         }
