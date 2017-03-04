@@ -1,3 +1,8 @@
+body {
+  background-color: #ddd;
+  font-family: roboto;
+}
+
 .App {
   display: flex;
   flex-direction: column;
@@ -23,7 +28,7 @@
 .circle {
   width: 200px;
   height: 200px;
-  background-color: #fff;
+  background-color: #ddd;
   border: 3px solid #00c45b;
   border-radius: 50%;
   position: relative;
