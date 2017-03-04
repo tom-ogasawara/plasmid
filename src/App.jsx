@@ -25,10 +25,11 @@ class App extends Component {
       const sequenceLength = json.sequenceLength;
       const features = json.features;
 
-      this.setState({sequence});
-      this.setState({sequenceLength});
-      this.setState({features});
-      // console.log(this.state);
+      this.setState({
+        sequence: sequence,
+        sequenceLength: sequenceLength,
+        features: features
+      });
     });
   }
 

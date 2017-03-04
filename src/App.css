@@ -1,0 +1,16 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  padding: 5%;
+}
+
+.App-title {
+  font-size: 35px;
+  margin-bottom: 15px;
+}
+
+.search-button {
+  width: 30%;
+}
