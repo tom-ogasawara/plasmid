@@ -1,10 +1,5 @@
 import React, { Component } from 'react';
-import {
-  FormGroup,
-  InputGroup,
-  Button,
-  ButtonToolbar
-} from 'react-bootstrap';
+import { Button, ButtonToolbar } from 'react-bootstrap';
 import './App.css';
 
 class App extends Component {
@@ -68,13 +63,14 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-title">Plasmid Visualization</div>
-        <FormGroup className='search-button'>
-          <InputGroup>
-            <ButtonToolbar className="search-button">
-              <Button onClick={() => this.search()} bsStyle="primary" bsSize="large">Load New Plasmid</Button>
-            </ButtonToolbar>
-          </InputGroup>
-        </FormGroup>
+          <ButtonToolbar className="search-button">
+            <Button
+              onClick={() => this.search()}
+              bsStyle="primary"
+              bsSize="large">
+              Load New Plasmid
+            </Button>
+          </ButtonToolbar>
         {
           this.state.sequence !== null
           ?
