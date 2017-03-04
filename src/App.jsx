@@ -12,7 +12,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      sequence: "",
+      sequence: null,
       sequenceLength: 0,
       features: []
     };
@@ -31,11 +31,37 @@ class App extends Component {
       const features = json.features;
 
       this.setState({
-        sequence: sequence,
-        sequenceLength: sequenceLength,
-        features: features
+        sequence,
+        sequenceLength,
+        features
       });
     });
+  }
+
+  renderLabel() {
+    return(
+      <div className="plasmid-label">
+        <div className="plasmid-name">Plasmid X</div>
+        <div className="sequence-length">
+          {this.state.sequenceLength} bp
+        </div>
+      </div>
+    );
+  }
+
+  renderFeatures() {
+    return(
+      <div></div>
+    );
+  }
+
+  renderSequence() {
+    return(
+      <div className="sequence">
+        Sequence: <br />
+        {this.state.sequence};
+      </div>
+    );
   }
 
   render() {
@@ -54,15 +80,9 @@ class App extends Component {
           ?
             <div className="data">
               <div className="circle"></div>
-              <div className="plasmid-label">
-                <div className="plasmid-name">Plasmid X</div>
-                <div className="sequence-length">
-                  {this.state.sequenceLength} bp
-                </div>
-              </div>
-              <div className="sequence">
-                {this.state.sequence}
-              </div>
+              {this.renderLabel()}
+              {this.renderFeatures()}
+              {this.renderSequence()}
             </div>
           : <div></div>
         }
