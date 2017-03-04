@@ -53,7 +53,12 @@ class App extends Component {
           this.state.sequence !== null
           ?
             <div className="data">
-              <div className="circle">
+              <div className="circle"></div>
+              <div className="plasmid-label">
+                <div className="plasmid-name">Plasmid X</div>
+                <div className="sequence-length">
+                  {this.state.sequenceLength} bp
+                </div>
               </div>
               <div className="sequence">
                 {this.state.sequence}
