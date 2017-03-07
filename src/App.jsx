@@ -44,20 +44,38 @@ class App extends Component {
     );
   }
 
+
+
   renderFeatures() {
-    return(
-      <div></div>
-    );
+    const featureList = this.state.features;
+    const featureDivs = [];
+
+    for (let i = 0; i < this.state.features.length; i++) {
+      featureDivs.push(
+        <div className="feature" id={i} key={i}>
+          {featureList[i].name} <br />
+          {featureList[i].index} bp
+        </div>
+      );
+    }
+
+    return featureDivs;
   }
 
   renderSequence() {
     return(
       <div className="sequence">
         Sequence: <br />
-        {this.state.sequence};
+        {this.state.sequence}
       </div>
     );
   }
+
+  // styleFeatures() {
+  //   for (let i = 0; i < this.state.features.length; i++) {
+  //     document.getElementById(i).style.color = 'red';
+  //   }
+  // }
 
   render() {
     return (
