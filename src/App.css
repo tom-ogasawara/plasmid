@@ -36,5 +36,18 @@ body {
   border-radius: 50%;
   position: relative;
   align-self: center;
-  margin: 20px;
+  margin: 50px;
+}
+
+.feature {
+  height: 100%;
+  position: absolute;
+  left: 50%;
+}
+
+.plasmid-label {
+  height: 100%;
+  position: absolute;
+  left: 47.7%;
+  top: 45%;
 }
