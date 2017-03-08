@@ -44,17 +44,24 @@ class App extends Component {
     );
   }
 
-
-
   renderFeatures() {
     const featureList = this.state.features;
     const featureDivs = [];
 
     for (let i = 0; i < this.state.features.length; i++) {
+      let my_color = "blue";
+
       featureDivs.push(
-        <div className="feature" id={i} key={i}>
+        <div
+          className="feature"
+          id={i}
+          key={i}
+          style={
+            {transform:rotate(`${featureList[i].index}deg`)}
+          }>
           {featureList[i].name} <br />
-          {featureList[i].index} bp
+          {featureList[i].index} bp <br />
+          |
         </div>
       );
     }
