@@ -27,41 +27,49 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #999;
 }
 
 .data {
   height: 400px;
   width: 400px;
-  border-radius: 50%;
   justify-content: center;
   align-items: center;
 }
 
 .circle {
-  width: 210px;
-  height: 210px;
-  margin: 100px;
+  width: 240px;
+  height: 240px;
+  margin: 77px;
   background-color: #ddd;
   border: 3px solid #00c45b;
   border-radius: 50%;
   position: absolute;
-  align-self: center;
 }
 
 .feature {
+  color: blue;
   height: 400px;
   width: 400px;
   position: absolute;
-  align-self: center;
+  transition-duration: 2s;
+  -webkit-transition-duration: 2s;
 }
 
-.tick-mark {
-
+.feature-label {
+  font-size: 12px;
+  transition-duration: 2s;
+  -webkit-transition-duration: 2s;
 }
 
 .plasmid-label {
   height: 100%;
+  width: 100px;
+  margin: 9px 150px;
   position: absolute;
-  left: calc(50% - 1.5em);
-  top: calc(50% - 0.5em);
+  z-index: 3;
+}
+
+.plasmid-name {
+  margin-top: 95px;
 }

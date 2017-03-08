@@ -37,9 +37,11 @@ class App extends Component {
   renderLabel() {
     return(
       <div className="plasmid-label">
+        <div className="zero-bp-label">0 bp</div>
+        <div className="zero-bp-label"><br /><br />|</div>
         <div className="plasmid-name">Plasmid X</div>
         <div className="sequence-length">
-          {this.state.sequenceLength} bp
+          {this.state.sequenceLength}00 bp
         </div>
       </div>
     );
@@ -51,21 +53,16 @@ class App extends Component {
 
     for (let i = 0; i < this.state.features.length; i++) {
       let degrees = featureList[i].index / this.state.sequenceLength * 360;
-      console.log(degrees);
       let rotate = {transform: `rotate(${degrees}deg)`};
       let align = {transform: `rotate(-${degrees}deg)`};
-      // rotate = null;
-      // align = null;
 
       featureDivs.push(
         <div className="feature" key={i} style={rotate}>
           <div className="feature-label" style={align}>
             {featureList[i].name} <br />
-            {featureList[i].index} bp <br />
+            {featureList[i].index}00 bp <br />
           </div>
-          <br />
-          <br />
-          |
+          <br /><br />|
         </div>
       );
     }
@@ -81,12 +78,6 @@ class App extends Component {
       </div>
     );
   }
-
-  // styleFeatures() {
-  //   for (let i = 0; i < this.state.features.length; i++) {
-  //     document.getElementById(i).style.color = 'red';
-  //   }
-  // }
 
   render() {
     return (
