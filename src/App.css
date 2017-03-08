@@ -1,33 +1,53 @@
-body {
-  font-family: roboto;
+
+
+.app {
+  height: 100%;
   width: 100%;
-  /*background-image: url("../assets/images/dna_wallpaper.jpg");*/
   background-size: cover;
+  background-image: url("../assets/images/dna_wallpaper.jpg");
   text-align: center;
 }
 
-.app {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
+.outer-container {
+  min-height: 600px;
+  padding: 100px;
+
+}
+
+.container {
   align-items: center;
+  justify-content: center;
+  width: 60%;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 10px;
+}
+
+.inner-container {
+  margin: 20px;
+  justify-content: center;
+
 }
 
 .app-title {
   font-size: 35px;
-  margin-bottom: 15px;
+  margin: 20px;
+  color: #eee;
 }
 
 .search-button {
-  margin-bottom: 20px;
-  z-index: 2;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 60px;
+  opacity: 0.7;
 }
 
 .visualization {
+  padding: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #999;
+  border-radius: 5px;
+  background-color: rgba(250, 250, 250, 0.1);
 }
 
 .data {
@@ -41,14 +61,14 @@ body {
   width: 240px;
   height: 240px;
   margin: 77px;
-  background-color: #ddd;
-  border: 3px solid #00c45b;
+  background-color: rgba(250, 250, 250, 0.3);
+  border: 3px solid #64acef;
   border-radius: 50%;
   position: absolute;
 }
 
 .feature {
-  color: blue;
+  color: #eee;
   height: 400px;
   width: 400px;
   position: absolute;
@@ -67,9 +87,11 @@ body {
   width: 100px;
   margin: 9px 150px;
   position: absolute;
-  z-index: 3;
+  z-index: 2;
+  color: #ccc;
 }
 
 .plasmid-name {
   margin-top: 95px;
+
 }

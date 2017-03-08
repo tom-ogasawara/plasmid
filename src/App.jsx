@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, ButtonToolbar } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import './App.css';
 import './reset.css';
 
@@ -82,29 +82,33 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <div className="app-title">Plasmid Visualization</div>
-          <ButtonToolbar className="search-button">
-            <Button
-              onClick={() => this.search()}
-              bsStyle="primary"
-              bsSize="large">
-              Load New Plasmid
-            </Button>
-          </ButtonToolbar>
-        {
-          this.state.sequence !== null
-          ?
-            <div className="visualization">
-              <div className="data">
-                <div className="circle"></div>
-                {this.renderLabel()}
-                {this.renderFeatures()}
-              </div>
-              {this.renderSequence}
+        <div className="outer-container">
+          <div className="container">
+            <div className="app-title">Plasmid Visualization</div>
+            <div className="inner-container">
+              <Button
+                className="search-button"
+                onClick={() => this.search()}
+                bsStyle="primary"
+                bsSize="large">
+                Load New Plasmid
+              </Button>
+              {
+                this.state.sequence !== null
+                ?
+                  <div className="visualization">
+                    <div className="data">
+                      <div className="circle"></div>
+                      {this.renderLabel()}
+                      {this.renderFeatures()}
+                    </div>
+                    {this.renderSequence}
+                  </div>
+                : <div></div>
+              }
             </div>
-          : <div></div>
-        }
-
+          </div>
+        </div>
       </div>
     );
   }
