@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button, ButtonToolbar } from 'react-bootstrap';
 import './App.css';
+import './reset.css';
 
 class App extends Component {
   constructor(props) {
@@ -49,18 +50,21 @@ class App extends Component {
     const featureDivs = [];
 
     for (let i = 0; i < this.state.features.length; i++) {
-      let my_color = "blue";
+      let degrees = featureList[i].index / this.state.sequenceLength * 360;
+      console.log(degrees);
+      let rotate = {transform: `rotate(${degrees}deg)`};
+      let align = {transform: `rotate(-${degrees}deg)`};
+      // rotate = null;
+      // align = null;
 
       featureDivs.push(
-        <div
-          className="feature"
-          id={i}
-          key={i}
-          style={
-            {transform:rotate(`${featureList[i].index}deg`)}
-          }>
-          {featureList[i].name} <br />
-          {featureList[i].index} bp <br />
+        <div className="feature" key={i} style={rotate}>
+          <div className="feature-label" style={align}>
+            {featureList[i].name} <br />
+            {featureList[i].index} bp <br />
+          </div>
+          <br />
+          <br />
           |
         </div>
       );
@@ -86,8 +90,8 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <div className="App-title">Plasmid Visualization</div>
+      <div className="app">
+        <div className="app-title">Plasmid Visualization</div>
           <ButtonToolbar className="search-button">
             <Button
               onClick={() => this.search()}
@@ -99,11 +103,13 @@ class App extends Component {
         {
           this.state.sequence !== null
           ?
-            <div className="data">
-              <div className="circle"></div>
-              {this.renderLabel()}
-              {this.renderFeatures()}
-              {this.renderSequence()}
+            <div className="visualization">
+              <div className="data">
+                <div className="circle"></div>
+                {this.renderLabel()}
+                {this.renderFeatures()}
+              </div>
+              {this.renderSequence}
             </div>
           : <div></div>
         }
