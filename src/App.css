@@ -86,12 +86,12 @@
 .plasmid-label {
   height: 100%;
   width: 100px;
-  margin: 9px 150px;
+  margin: 48px 150px;
   position: absolute;
   z-index: 2;
   color: #ccc;
 }
 
 .plasmid-name {
-  margin-top: 95px;
+  margin-top: 90px;
 }

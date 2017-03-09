@@ -38,7 +38,7 @@ class App extends Component {
     return(
       <div className="plasmid-label">
         <div className="zero-bp-label">0 bp</div>
-        <div className="zero-bp-label"><br /><br />|</div>
+        <div className="zero-bp-label">|</div>
         <div className="plasmid-name">Plasmid X</div>
         <div className="sequence-length">
           {this.state.sequenceLength}00 bp
@@ -102,7 +102,6 @@ class App extends Component {
                       {this.renderLabel()}
                       {this.renderFeatures()}
                     </div>
-                    {this.renderSequence}
                   </div>
                 : <div></div>
               }
